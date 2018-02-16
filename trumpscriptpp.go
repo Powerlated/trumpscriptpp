@@ -118,12 +118,12 @@ func loadFile() {
 			}
 		} else {
 			loadedFile = string(b)
-			if checkHeader() == false {
+			if checkTrumpHeader() == false {
 				red.Print("This file is Fake News! It does not contain ")
 				boldYellow.Print("Make programming great again")
 				red.Println(" as a header!")
 				os.Exit(0)
-			} else if checkFooter() == false {
+			} else if checkTrumpFooter() == false {
 				red.Print("This file is Fake News! It does not contain ")
 				boldYellow.Print("America is great")
 				red.Println(" as a footer!")
@@ -135,7 +135,12 @@ func loadFile() {
 	}
 }
 
-func checkHeader() bool {
+
+func checkTrumpFile() bool {
+	return checkTrumpHeader() && checkTrumpFooter()
+}
+
+func checkTrumpHeader() bool {
 	if utf8.RuneCountInString(loadedFile) <= 28 {
 		return false
 	}
@@ -145,7 +150,7 @@ func checkHeader() bool {
 	return false
 }
 
-func checkFooter() bool {
+func checkTrumpFooter() bool {
 	if utf8.RuneCountInString(loadedFile) <= 17 {
 		return false
 	}
@@ -155,4 +160,11 @@ func checkFooter() bool {
 		return true
 	}
 	return false
+}
+
+func checkForMain() bool {
+	if strings.Contains(loadedFile, "\nAmerica {") {
+		return true;
+	} 
+	return false;
 }
