@@ -26,6 +26,8 @@ func main() {
 	fmt.Printf(color.YellowString("PRESIDENT OF THE VIRGIN ISLANDS"))
 	fmt.Println(color.BlueString(" in full caps."))
 
+	fmt.Println()
+
 	isTrumpSupporter()
 }
 
