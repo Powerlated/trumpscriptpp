@@ -142,7 +142,7 @@ func loadFile() {
 				}
 				red.Print("File ")
 				boldYellow.Print(loadedFileName)
-				red.Print(" loaded. Executing...")
+				red.Println(" loaded. Executing...")
 			}
 			fileConfirmed = true
 		}
