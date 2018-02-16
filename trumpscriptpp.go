@@ -1,0 +1,5 @@
+package trumpscriptpp
+
+func main() {
+
+}
