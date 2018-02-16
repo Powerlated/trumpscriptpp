@@ -14,7 +14,8 @@ import (
 	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
-var allowedWords = []string{"a",
+var allowedWords = []string{
+	"a",
 	"abandoned",
 	"able",
 	"aborted",
@@ -2210,7 +2211,7 @@ var allowedWords = []string{"a",
 	"your",
 	"yourself",
 	"zero",
-	}
+}
 
 var red = color.New(color.FgRed)
 var boldRed = red.Add(color.Bold)
@@ -2333,7 +2334,6 @@ func loadFile() {
 	}
 }
 
-
 func checkTrumpFile() bool {
 	return checkTrumpHeader() && checkTrumpFooter()
 }
@@ -2362,7 +2362,7 @@ func checkTrumpFooter() bool {
 
 func checkForMain() bool {
 	if strings.Contains(loadedFile, "\nAmerica {") {
-		return true;
-	} 
-	return false;
+		return true
+	}
+	return false
 }
