@@ -34,11 +34,11 @@ func main() {
 	fmt.Println()
 
 	blue.Printf("To switch to HillaryScript++ mode, type ")
-	yellow.Printf("EMAILS EMAILS EMAILS")
+	boldYellow.Printf("EMAILS EMAILS EMAILS")
 	blue.Println(" in full caps.")
 
 	red.Printf("To continue in TrumpScript++ mode, type ")
-	yellow.Printf("PRESIDENT OF THE VIRGIN ISLANDS")
+	boldYellow.Printf("PRESIDENT OF THE VIRGIN ISLANDS")
 	red.Println(" in full caps.")
 
 	trumpscriptpp = isTrumpSupporter()
