@@ -118,19 +118,20 @@ func loadFile() {
 			}
 		} else {
 			loadedFile = string(b)
-			if checkTrumpHeader() == false {
-				red.Print("This file is Fake News! It does not contain ")
-				boldYellow.Print("Make programming great again")
-				red.Println(" as a header!")
-				os.Exit(0)
-			} else if checkTrumpFooter() == false {
-				red.Print("This file is Fake News! It does not contain ")
-				boldYellow.Print("America is great")
-				red.Println(" as a footer!")
-				os.Exit(0)
-			} else {
-				fileConfirmed = true
+			if trumpscriptpp {
+				if checkTrumpHeader() == false {
+					red.Print("This file is Fake News! It does not contain ")
+					boldYellow.Print("Make programming great again")
+					red.Println(" as a header!")
+					os.Exit(0)
+				} else if checkTrumpFooter() == false {
+					red.Print("This file is Fake News! It does not contain ")
+					boldYellow.Print("America is great")
+					red.Println(" as a footer!")
+					os.Exit(0)
+				}
 			}
+			fileConfirmed = true
 		}
 	}
 }
