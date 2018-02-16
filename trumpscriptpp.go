@@ -1,6 +1,7 @@
 package main
 
 import (
+	"strings"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -102,6 +103,9 @@ func loadFile() {
 			Message: "Open a file to run:",
 		}
 		survey.AskOne(prompt, &answer, nil)
+		if strings.ToLower(answer) == "quit" {
+			os.Exit(0)
+		}
 		b, err := ioutil.ReadFile(answer)
 		if err != nil {
 			if trumpscriptpp {
