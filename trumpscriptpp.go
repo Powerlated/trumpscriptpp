@@ -113,7 +113,7 @@ func loadFile() {
 			if checkHeader() == false {
 				red.Print("This file is fake news! It does not contain ")
 				boldYellow.Print("Make programming great again")
-				red.Print(" as a header!")
+				red.Println(" as a header!")
 			} else {
 				loadedFile = string(b)
 				fileConfirmed = true
