@@ -5,6 +5,8 @@ import (
 	"github.com/fatih/color"
 )
 
+var hillaryscriptpp = false
+
 func main() {
 	color.Red("Welcome to TrumpScript++!")
 	fmt.Printf(color.BlueString("To switch to HillaryScript++ mode, type "))
