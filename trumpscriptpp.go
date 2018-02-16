@@ -22,6 +22,7 @@ var green = color.New(color.FgGreen)
 var boldGreen = green.Add(color.Bold)
 
 var yellow = color.New(color.FgYellow)
+var boldYellow = yellow.Add(color.Bold)
 
 var loadedFile = ""
 var trumpscriptpp = false
@@ -104,13 +105,25 @@ func loadFile() {
 		b, err := ioutil.ReadFile(answer)
 		if err != nil {
 			if trumpscriptpp {
-				boldRed.Println("That file name is Fake News!")
+				red.Println("That file name is Fake News!")
 			} else {
-				boldBlue.Println("That file does not exist, just like my emails.")
+				blue.Println("That file does not exist, just like my emails.")
 			}
 		} else {
+			if checkHeader() == false {
+				red.Print("This file is fake news! It does not contain ")
+				boldYellow.Print("Make programming great again")
+				red.Print(" as a header!")
+			}
 			loadedFile = string(b)
 			fileConfirmed = true
 		}
 	}
+}
+
+func checkHeader() bool {
+	if loadedFile[0:28] == "Make programming great again" {
+		return true
+	}
+	return false
 }
