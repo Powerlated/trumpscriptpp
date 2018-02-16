@@ -121,12 +121,12 @@ func loadFile() {
 		} else {
 			loadedFile = string(b)
 			if checkHeader() == false {
-				red.Print("This file is fake news! It does not contain ")
+				red.Print("This file is Fake News! It does not contain ")
 				boldYellow.Print("Make programming great again")
 				red.Println(" as a header!")
 				os.Exit(0)
 			} else if checkFooter() == false {
-				red.Print("This file is fake news! It does not contain ")
+				red.Print("This file is Fake News! It does not contain ")
 				boldYellow.Print("America is great")
 				red.Println(" as a footer!")
 				os.Exit(0)
