@@ -40,6 +40,8 @@ func main() {
 	red.Println(" in full caps.")
 
 	trumpscriptpp = isTrumpSupporter()
+
+	loadFile()
 }
 
 func isTrumpSupporter() bool {
