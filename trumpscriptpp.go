@@ -98,7 +98,7 @@ func loadFile() {
 		fmt.Println()
 		answer := ""
 		prompt := &survey.Input{
-			Message: "Open a file to run: ",
+			Message: "Open a file to run:",
 		}
 		survey.AskOne(prompt, &answer, nil)
 		b, err := ioutil.ReadFile(answer)
