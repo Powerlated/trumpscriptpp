@@ -144,6 +144,7 @@ func loadFile() {
 				boldYellow.Print(loadedFileName)
 				red.Println(" loaded. Executing...")
 			}
+			fmt.Println()
 			fileConfirmed = true
 		}
 	}
