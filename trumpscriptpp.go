@@ -11,7 +11,7 @@ import (
 	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
-var hillaryscriptpp = false
+var trumpscriptpp = false
 
 func main() {
 	red := color.New(color.FgRed)
@@ -37,7 +37,7 @@ func main() {
 
 	fmt.Println()
 
-	isTrumpSupporter()
+	trumpscriptpp = isTrumpSupporter()
 }
 
 func isTrumpSupporter() bool {
@@ -62,10 +62,12 @@ func isTrumpSupporter() bool {
 			boldBlue.Println("ALL HAIL OUR LOW IQ GENIUS HILLARY CLINTON AND HER PRIVATE EMAIL SERVERS!")
 			time.Sleep(time.Second * 2)
 			statusConfirmed = true
+			return false;
 		} else if answer == "PRESIDENT OF THE VIRGIN ISLANDS" {
 			boldRed.Println("ALL HAIL OUR 70 YEAR OLD PRESIDENT IN ACCELERATED READING!")
 			time.Sleep(time.Second * 2)
 			statusConfirmed = true
+			return true;
 		} else {
 			boldGreen.Println("THAT IS NOT AN OPTION! SCREW OFF COMMUNIST PIGS!")
 			time.Sleep(time.Second * 2)
