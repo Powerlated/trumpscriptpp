@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
-	"strings"
+	"os/exec"
+	"runtime"
+	"time"
 
 	"github.com/fatih/color"
 	survey "gopkg.in/AlecAivazis/survey.v1"
@@ -45,9 +47,7 @@ func isTrumpSupporter() bool {
 		}
 		survey.AskOne(prompt, &answer, nil)
 
-		if strings.ToLower(answer) == "quit" {
-			os.Exit(0)
-		} else if answer == "EMAILS EMAILS EMAILS" {
+		if answer == "EMAILS EMAILS EMAILS" {
 			boldBlue.Println("ALL HAIL OUR LOW IQ GENIUS HILLARY CLINTON AND HER PRIVATE EMAIL SERVERS!")
 			statusConfirmed = true
 		} else if answer == "PRESIDENT OF THE VIRGIN ISLANDS" {
@@ -55,8 +55,30 @@ func isTrumpSupporter() bool {
 			statusConfirmed = true
 		} else {
 			boldGreen.Println("THAT IS NOT AN OPTION! SCREW OFF COMMUNIST PIGS!")
-			fmt.Println()
+			time.Sleep(time.Second * 2)
+			clear()
+			os.Exit(0)
 		}
 	}
 	return false
+}
+
+func clear() {
+
+	var c *exec.Cmd
+	var doClear = true
+
+	switch runtime.GOOS {
+	case "darwin":
+	case "linux":
+		c = exec.Command("clear")
+	case "windows":
+		c = exec.Command("cmd", "/c", "cls")
+	default:
+		doClear = false
+	}
+	if doClear {
+		c.Stdout = os.Stdout
+		c.Run()
+	}
 }
