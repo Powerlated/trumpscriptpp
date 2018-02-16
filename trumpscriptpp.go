@@ -115,12 +115,13 @@ func loadFile() {
 				blue.Println("That file does not exist, just like my emails.")
 			}
 		} else {
+			loadedFile = string(b)
 			if checkHeader() == false {
 				red.Print("This file is fake news! It does not contain ")
 				boldYellow.Print("Make programming great again")
 				red.Println(" as a header!")
+				os.Exit(0)
 			} else {
-				loadedFile = string(b)
 				fileConfirmed = true
 			}
 		}
@@ -128,7 +129,7 @@ func loadFile() {
 }
 
 func checkHeader() bool {
-	if utf8.RuneCountInString(loadedFile) >= 28 {
+	if utf8.RuneCountInString(loadedFile) >= 28 {	
 		return false
 	}
 	if loadedFile[0:28] == "Make programming great again" {
