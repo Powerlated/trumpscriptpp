@@ -14,17 +14,26 @@ import (
 var hillaryscriptpp = false
 
 func main() {
+	red := color.New(color.FgRed)
+	// boldRed := red.Add(color.Bold)
+
+	blue := color.New(color.FgBlue)
+	// boldBlue := blue.Add(color.Bold)
+
+	yellow := color.New(color.FgYellow)
+	// boldYellow := yellow.Add(color.Bold)
+
 	color.Red("Welcome to TrumpScript++!")
 
 	fmt.Println()
 
-	fmt.Printf(color.BlueString("To switch to HillaryScript++ mode, type "))
-	fmt.Printf(color.YellowString("EMAILS EMAILS EMAILS"))
-	fmt.Println(color.BlueString(" in full caps."))
+	blue.Printf("To switch to HillaryScript++ mode, type ")
+	yellow.Printf("EMAILS EMAILS EMAILS")
+	blue.Println(" in full caps.")
 
-	fmt.Printf(color.RedString("To continue in TrumpScript++ mode, type "))
-	fmt.Printf(color.YellowString("PRESIDENT OF THE VIRGIN ISLANDS"))
-	fmt.Println(color.RedString(" in full caps."))
+	red.Printf("To continue in TrumpScript++ mode, type ")
+	yellow.Printf("PRESIDENT OF THE VIRGIN ISLANDS")
+	red.Println(" in full caps.")
 
 	fmt.Println()
 
