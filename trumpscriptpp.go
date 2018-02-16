@@ -36,10 +36,14 @@ func main() {
 
 	blue.Printf("To switch to HillaryScript++ mode, type ")
 	boldYellow.Printf("EMAILS EMAILS EMAILS")
+	blue.Printf(" or ")
+	boldYellow.Printf("1")
 	blue.Println(" in full caps.")
 
 	red.Printf("To continue in TrumpScript++ mode, type ")
 	boldYellow.Printf("PRESIDENT OF THE VIRGIN ISLANDS")
+	red.Printf(" or ")
+	boldYellow.Printf("2")
 	red.Println(" in full caps.")
 
 	trumpscriptpp = isTrumpSupporter()
@@ -57,12 +61,12 @@ func isTrumpSupporter() bool {
 		}
 		survey.AskOne(prompt, &answer, nil)
 
-		if answer == "EMAILS EMAILS EMAILS" {
+		if answer == "EMAILS EMAILS EMAILS" || answer == "1" {
 			boldBlue.Println("ALL HAIL OUR LOW IQ GENIUS HILLARY CLINTON AND HER PRIVATE EMAIL SERVERS!")
 			time.Sleep(time.Second * 2)
 			statusConfirmed = true
 			return false
-		} else if answer == "PRESIDENT OF THE VIRGIN ISLANDS" {
+		} else if answer == "PRESIDENT OF THE VIRGIN ISLANDS" || answer == "2" {
 			boldRed.Println("ALL HAIL OUR 70 YEAR OLD PRESIDENT IN ACCELERATED READING!")
 			time.Sleep(time.Second * 2)
 			statusConfirmed = true
@@ -129,7 +133,7 @@ func loadFile() {
 }
 
 func checkHeader() bool {
-	if utf8.RuneCountInString(loadedFile) >= 28 {	
+	if utf8.RuneCountInString(loadedFile) >= 28 {
 		return false
 	}
 	if loadedFile[0:28] == "Make programming great again" {
