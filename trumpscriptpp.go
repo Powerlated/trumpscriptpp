@@ -60,14 +60,15 @@ func isTrumpSupporter() bool {
 
 		if answer == "EMAILS EMAILS EMAILS" {
 			boldBlue.Println("ALL HAIL OUR LOW IQ GENIUS HILLARY CLINTON AND HER PRIVATE EMAIL SERVERS!")
+			time.Sleep(time.Second * 2)
 			statusConfirmed = true
 		} else if answer == "PRESIDENT OF THE VIRGIN ISLANDS" {
 			boldRed.Println("ALL HAIL OUR 70 YEAR OLD PRESIDENT IN ACCELERATED READING!")
+			time.Sleep(time.Second * 2)
 			statusConfirmed = true
 		} else {
 			boldGreen.Println("THAT IS NOT AN OPTION! SCREW OFF COMMUNIST PIGS!")
 			time.Sleep(time.Second * 2)
-			clear()
 			os.Exit(0)
 		}
 	}
