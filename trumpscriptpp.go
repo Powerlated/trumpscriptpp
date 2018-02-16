@@ -90,4 +90,20 @@ func clear() {
 	}
 }
 
-
+func loadFile() {
+	fileConfirmed := false
+	for !fileConfirmed {
+		fmt.Println()
+		answer := ""
+		prompt := &survey.Input{
+			Message: "Open a file to run: ",
+		}
+		survey.AskOne(prompt, &answer, nil)
+		b, err := ioutil.ReadFile(answer)
+		if err != nil {
+			boldRed.Println("That filename is Fake News!")
+		} else {
+			loadedFile = string(b)
+		}
+	}
+}
