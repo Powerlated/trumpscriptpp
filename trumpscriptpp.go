@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 	"os/exec"
 	"runtime"
@@ -42,9 +43,9 @@ func main() {
 }
 
 func isTrumpSupporter() bool {
-	fmt.Println()
 	statusConfirmed := false
 	for !statusConfirmed {
+		fmt.Println()
 		answer := ""
 		prompt := &survey.Input{
 			Message: "Of which mode do you want to enter?",
@@ -88,4 +89,5 @@ func clear() {
 		c.Run()
 	}
 }
+
 
