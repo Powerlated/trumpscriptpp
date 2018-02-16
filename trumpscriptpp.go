@@ -124,10 +124,17 @@ func loadFile() {
 					boldYellow.Print("Make programming great again")
 					red.Println(" as a header!")
 					os.Exit(0)
-				} else if checkTrumpFooter() == false {
+				}
+				if checkTrumpFooter() == false {
 					red.Print("This file is Fake News! It does not contain ")
 					boldYellow.Print("America is great")
 					red.Println(" as a footer!")
+					os.Exit(0)
+				}
+				if checkTrumpEntryPoint() == false {
+					red.Print("This file is Fake News! It does not contain the function ")
+					boldYellow.Print("America")
+					red.Println(" as an entry point!")
 					os.Exit(0)
 				}
 			}
@@ -162,7 +169,7 @@ func checkTrumpFooter() bool {
 	return false
 }
 
-func checkForMain() bool {
+func checkTrumpEntryPoint() bool {
 	if strings.Contains(loadedFile, "\nAmerica {") {
 		return true
 	}
