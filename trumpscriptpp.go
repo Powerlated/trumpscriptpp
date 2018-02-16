@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -146,10 +147,13 @@ func checkHeader() bool {
 }
 
 func checkFooter() bool {
-	if utf8.RuneCountInString(loadedFile) <= 16 {
+	println(loadedFile[len(loadedFile)-17:])
+	if utf8.RuneCountInString(loadedFile) <= 17 {
 		return false
 	}
-	if loadedFile[len(loadedFile)-16:] == "America is great" {
+	untrimmed := loadedFile[len(loadedFile)-17:]
+	trimmed := untrimmed[0:16]
+	if trimmed == "America is great" {
 		return true
 	}
 	return false
