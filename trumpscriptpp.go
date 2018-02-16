@@ -1,13 +1,14 @@
 package main
 
 import (
-	"strings"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"os/exec"
 	"runtime"
+	"strings"
 	"time"
+	"unicode/utf8"
 
 	"github.com/fatih/color"
 	survey "gopkg.in/AlecAivazis/survey.v1"
@@ -127,6 +128,9 @@ func loadFile() {
 }
 
 func checkHeader() bool {
+	if utf8.RuneCountInString(loadedFile) >= 28 {
+		return false
+	}
 	if loadedFile[0:28] == "Make programming great again" {
 		return true
 	}
