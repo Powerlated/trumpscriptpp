@@ -110,6 +110,7 @@ func loadFile() {
 			}
 		} else {
 			loadedFile = string(b)
+			fileConfirmed = true
 		}
 	}
 }
