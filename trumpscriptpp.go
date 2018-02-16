@@ -125,6 +125,11 @@ func loadFile() {
 				boldYellow.Print("Make programming great again")
 				red.Println(" as a header!")
 				os.Exit(0)
+			} else if checkFooter() == false {
+				red.Print("This file is fake news! It does not contain ")
+				boldYellow.Print("America is great")
+				red.Println(" as a footer!")
+				os.Exit(0)
 			} else {
 				fileConfirmed = true
 			}
@@ -133,10 +138,20 @@ func loadFile() {
 }
 
 func checkHeader() bool {
-	if utf8.RuneCountInString(loadedFile) >= 28 {
+	if utf8.RuneCountInString(loadedFile) <= 28 {
 		return false
 	}
 	if loadedFile[0:28] == "Make programming great again" {
+		return true
+	}
+	return false
+}
+
+func checkFooter() bool {
+	if utf8.RuneCountInString(loadedFile) <= 16 {
+		return false
+	}
+	if loadedFile[len(loadedFile)-16:] == "America is great" {
 		return true
 	}
 	return false
