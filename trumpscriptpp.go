@@ -27,6 +27,7 @@ var yellow = color.New(color.FgYellow)
 var boldYellow = yellow.Add(color.Bold)
 
 var loadedFile = ""
+var loadedFileName = ""
 var trumpscriptpp = false
 
 func main() {
@@ -49,6 +50,7 @@ func main() {
 	trumpscriptpp = isTrumpSupporter()
 
 	loadFile()
+
 }
 
 func isTrumpSupporter() bool {
@@ -118,6 +120,7 @@ func loadFile() {
 			}
 		} else {
 			loadedFile = string(b)
+			loadedFileName = answer;
 			if trumpscriptpp {
 				if checkTrumpHeader() == false {
 					red.Print("This file is Fake News! It does not contain ")
@@ -137,6 +140,9 @@ func loadFile() {
 					red.Println(" as an entry point!")
 					os.Exit(0)
 				}
+				red.Print("File ")
+				boldYellow.Print(loadedFileName)
+				red.Print(" loaded. Executing...")
 			}
 			fileConfirmed = true
 		}
