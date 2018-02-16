@@ -38,12 +38,11 @@ func main() {
 	yellow.Printf("PRESIDENT OF THE VIRGIN ISLANDS")
 	red.Println(" in full caps.")
 
-	fmt.Println()
-
 	trumpscriptpp = isTrumpSupporter()
 }
 
 func isTrumpSupporter() bool {
+	fmt.Println()
 	statusConfirmed := false
 	for !statusConfirmed {
 		answer := ""
@@ -72,7 +71,6 @@ func isTrumpSupporter() bool {
 }
 
 func clear() {
-
 	var c *exec.Cmd
 	var doClear = true
 
@@ -90,3 +88,4 @@ func clear() {
 		c.Run()
 	}
 }
+
