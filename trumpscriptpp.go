@@ -103,7 +103,7 @@ func loadFile() {
 		survey.AskOne(prompt, &answer, nil)
 		b, err := ioutil.ReadFile(answer)
 		if err != nil {
-			boldRed.Println("That filename is Fake News!")
+			boldRed.Println("That file name is Fake News!")
 		} else {
 			loadedFile = string(b)
 		}
