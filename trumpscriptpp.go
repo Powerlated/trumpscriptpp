@@ -146,7 +146,6 @@ func checkHeader() bool {
 }
 
 func checkFooter() bool {
-	println(loadedFile[len(loadedFile)-17:])
 	if utf8.RuneCountInString(loadedFile) <= 17 {
 		return false
 	}
