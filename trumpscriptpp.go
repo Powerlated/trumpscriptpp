@@ -28,6 +28,15 @@ func main() {
 }
 
 func isTrumpSupporter() bool {
+	red := color.New(color.FgRed)
+	boldRed := red.Add(color.Bold)
+
+	blue := color.New(color.FgBlue)
+	boldBlue := blue.Add(color.Bold)
+
+	green := color.New(color.FgGreen)
+	boldGreen := green.Add(color.Bold)
+
 	statusConfirmed := false
 	for !statusConfirmed {
 		answer := ""
@@ -39,13 +48,13 @@ func isTrumpSupporter() bool {
 		if strings.ToLower(answer) == "quit" {
 			os.Exit(0)
 		} else if answer == "EMAILS EMAILS EMAILS" {
-			fmt.Println(color.BlueString("ALL HAIL OUR LOW IQ GENIUS HILLARY CLINTON AND HER PRIVATE EMAIL SERVERS!"))
+			boldBlue.Println("ALL HAIL OUR LOW IQ GENIUS HILLARY CLINTON AND HER PRIVATE EMAIL SERVERS!")
 			statusConfirmed = true
 		} else if answer == "PRESIDENT OF THE VIRGIN ISLANDS" {
-			fmt.Println(color.RedString("ALL HAIL OUR 70 YEAR OLD PRESIDENT IN ACCELERATED READING!"))
+			boldRed.Println("ALL HAIL OUR 70 YEAR OLD PRESIDENT IN ACCELERATED READING!")
 			statusConfirmed = true
 		} else {
-			fmt.Println(color.GreenString("THAT IS NOT AN OPTION! SCREW OFF COMMUNIST PIGS!"))
+			boldGreen.Println("THAT IS NOT AN OPTION! SCREW OFF COMMUNIST PIGS!")
 			fmt.Println()
 		}
 	}
