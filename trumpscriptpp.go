@@ -11,18 +11,21 @@ import (
 	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
+var red = color.New(color.FgRed)
+var boldRed = red.Add(color.Bold)
+
+var blue = color.New(color.FgBlue)
+var boldBlue = blue.Add(color.Bold)
+
+var green = color.New(color.FgGreen)
+var boldGreen = green.Add(color.Bold)
+
+var yellow = color.New(color.FgYellow)
+
+var loadedFile = ""
 var trumpscriptpp = false
 
 func main() {
-	red := color.New(color.FgRed)
-	// boldRed := red.Add(color.Bold)
-
-	blue := color.New(color.FgBlue)
-	// boldBlue := blue.Add(color.Bold)
-
-	yellow := color.New(color.FgYellow)
-	// boldYellow := yellow.Add(color.Bold)
-
 	color.Red("Welcome to TrumpScript++!")
 
 	fmt.Println()
@@ -41,15 +44,6 @@ func main() {
 }
 
 func isTrumpSupporter() bool {
-	red := color.New(color.FgRed)
-	boldRed := red.Add(color.Bold)
-
-	blue := color.New(color.FgBlue)
-	boldBlue := blue.Add(color.Bold)
-
-	green := color.New(color.FgGreen)
-	boldGreen := green.Add(color.Bold)
-
 	statusConfirmed := false
 	for !statusConfirmed {
 		answer := ""
@@ -62,12 +56,12 @@ func isTrumpSupporter() bool {
 			boldBlue.Println("ALL HAIL OUR LOW IQ GENIUS HILLARY CLINTON AND HER PRIVATE EMAIL SERVERS!")
 			time.Sleep(time.Second * 2)
 			statusConfirmed = true
-			return false;
+			return false
 		} else if answer == "PRESIDENT OF THE VIRGIN ISLANDS" {
 			boldRed.Println("ALL HAIL OUR 70 YEAR OLD PRESIDENT IN ACCELERATED READING!")
 			time.Sleep(time.Second * 2)
 			statusConfirmed = true
-			return true;
+			return true
 		} else {
 			boldGreen.Println("THAT IS NOT AN OPTION! SCREW OFF COMMUNIST PIGS!")
 			time.Sleep(time.Second * 2)
